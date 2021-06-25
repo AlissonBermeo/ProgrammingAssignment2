@@ -1,7 +1,10 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## The first function, makeCacheMatrix creates a special "array", which is actually a list that contains a function to: 5 
+## 1. set the value of the array 6 
+## 2. get the value of the array 7 ## 3. set the value of the inverse of the matrix 8 
+## 4. get the value of the inverse of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
 
@@ -32,4 +35,11 @@ cacheSolve <- function(x, ...) {
     if(!is.null(m)){
         message("getting cached data")
         return(m)
+               }
+   mat <- x$get()
+  m <- solve(mat,...)
+  x$setInverse(m)
+  m
+}
+
   }
